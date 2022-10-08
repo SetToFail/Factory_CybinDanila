@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>fabrica</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var propName, propType, propSerial;
+		function createObject(){
+				propName = prompt("Введите название:");
+				propType = prompt("Введите тип перевозки:");
+				propSerial = prompt("Введите серийный номер:");
+				return{
+					[propName]: propName,
+					[propType]: propType,
+					[propSerial]: propSerial,
+					print(){
+						console.log(`${propName}:${propType}:${propSerial}`);
+					}
+				}
+			}
+		function show(){
+			var object = createObject();
+			object.print();
+			var check = confirm("Продолжить?");
+			if (check === true)
+			{
+				show();
+			}
+		}
+	</script>
+	<input type="submit" value="Начать" onclick="show()">
+</body>
+</html>
